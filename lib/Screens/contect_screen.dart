@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:whatsapp_clone/Screens/chatlist_screen.dart';
 
-import '../colors.dart';
-import '../data.dart';
+import '../utils/colors.dart';
+import '../utils/data.dart';
 
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
+class ContectScreen extends StatelessWidget {
+  const ContectScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,13 @@ class ChatScreen extends StatelessWidget {
         itemCount: info.length,
         itemBuilder: (context, index) {
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return ChatList(
+                  index: index,
+                );
+              }));
+            },
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 6),
               child: ListTile(

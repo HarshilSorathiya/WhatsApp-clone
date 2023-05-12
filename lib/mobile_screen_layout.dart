@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:whatsapp_clone/Screens/calls_screen.dart';
 import 'package:whatsapp_clone/Screens/status_screen.dart';
 import 'package:whatsapp_clone/utils/colors.dart';
-import 'package:whatsapp_clone/widgets/chat_screen.dart';
+import 'package:whatsapp_clone/Screens/contect_screen.dart';
 
 import 'utils/data.dart';
 import 'Screens/community_screen.dart';
@@ -97,7 +97,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout>
           ),
           body: TabBarView(controller: _controller, children: [
             CommunityScreen(),
-            ChatScreen(),
+            ContectScreen(),
             StatusScreen(),
             CallsScreen()
           ])),

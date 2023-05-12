@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../utils/colors.dart';
+import 'utils/colors.dart';
 
 class WebScreenLayout extends StatelessWidget {
   const WebScreenLayout({super.key});
