@@ -22,7 +22,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout>
   @override
   late TabController _controller;
   void initState() {
-    _controller = TabController(length: 4, vsync: this);
+    _controller = TabController(length: 4, vsync: this, initialIndex: 1);
 
     super.initState();
   }
@@ -30,77 +30,80 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout>
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    print(width);
+    // print(width);
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-          appBar: AppBar(
-            elevation: 0,
-            systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarColor: appBarColor,
-              statusBarIconBrightness: Brightness.light,
-            ),
-            backgroundColor: appBarColor,
-            title: Text(
-              'WhatsApp',
-              style: TextStyle(
-                fontSize: 21,
-                color: Colors.grey,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            actions: [
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.photo_camera_outlined,
-                      color: Colors.grey)),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.search_outlined, color: Colors.grey)),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.more_vert_rounded, color: Colors.grey))
-            ],
-            bottom: TabBar(
-                controller: _controller,
-                indicatorSize: TabBarIndicatorSize.tab,
-                indicatorColor: tabColor,
-                indicatorWeight: 4,
-                labelColor: tabColor,
-                labelStyle:
-                    TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
-                unselectedLabelColor: klightgraycolor,
-                isScrollable: true,
-                tabs: [
-                  Container(
-                      width: 20,
-                      child: Tab(child: Icon(Icons.people_alt_outlined))),
-                  Container(
-                    width: width / 4.7,
-                    child: Tab(
-                      text: 'Chats',
-                    ),
-                  ),
-                  Container(
-                    width: width / 4.7,
-                    child: Tab(
-                      text: 'Status',
-                    ),
-                  ),
-                  Container(
-                    width: width / 4.7,
-                    child: Tab(
-                      text: 'Calls',
-                    ),
-                  )
-                ]),
+        appBar: AppBar(
+          elevation: 0,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarColor: appBarColor,
+            statusBarIconBrightness: Brightness.light,
           ),
-          body: TabBarView(controller: _controller, children: [
+          backgroundColor: appBarColor,
+          title: Text(
+            'WhatsApp',
+            style: TextStyle(
+              fontSize: 21,
+              color: Colors.grey,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.photo_camera_outlined,
+                    color: Colors.grey)),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.search_outlined, color: Colors.grey)),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.more_vert_rounded, color: Colors.grey))
+          ],
+          bottom: TabBar(
+              controller: _controller,
+              indicatorSize: TabBarIndicatorSize.tab,
+              indicatorColor: tabColor,
+              indicatorWeight: 4,
+              labelColor: tabColor,
+              labelStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+              unselectedLabelColor: klightgraycolor,
+              isScrollable: true,
+              tabs: [
+                Container(
+                    width: 20,
+                    child: Tab(child: Icon(Icons.people_alt_outlined))),
+                Container(
+                  width: width / 4.7,
+                  child: Tab(
+                    text: 'Chats',
+                  ),
+                ),
+                Container(
+                  width: width / 4.7,
+                  child: Tab(
+                    text: 'Status',
+                  ),
+                ),
+                Container(
+                  width: width / 4.7,
+                  child: Tab(
+                    text: 'Calls',
+                  ),
+                )
+              ]),
+        ),
+        body: TabBarView(
+          controller: _controller,
+          children: [
             CommunityScreen(),
             ContectScreen(),
             StatusScreen(),
             CallsScreen()
-          ])),
+          ],
+        ),
+      ),
     );
   }
 }

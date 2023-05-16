@@ -40,6 +40,7 @@ class ChatList extends StatelessWidget {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     info[index]['name'].toString(),
@@ -47,7 +48,10 @@ class ChatList extends StatelessWidget {
                   ),
                   // Text(
                   //   info[index]['name'].toString(),
-                  //   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  //   style: TextStyle(
+                  //       fontSize: 13,
+                  //       fontWeight: FontWeight.w500,
+                  //       color: klightgraycolor),
                   // ),
                 ],
               ),
@@ -177,7 +181,7 @@ class ChatList extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 6,
                   )
                 ],
               )
